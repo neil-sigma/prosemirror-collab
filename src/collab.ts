@@ -10,7 +10,7 @@ class Rebaseable {
 }
 
 /// Undo a given set of steps, apply a set of other steps, and then
-/// redo them @internal
+/// redo them
 export function rebaseSteps(steps: readonly Rebaseable[], over: readonly Step[], transform: Transform) {
   for (let i = steps.length - 1; i >= 0; i--) transform.step(steps[i].inverted)
   for (let i = 0; i < over.length; i++) transform.step(over[i])
